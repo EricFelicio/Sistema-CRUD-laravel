@@ -61,7 +61,7 @@
         <a href="sobre">sobre</a>
       </li>
       <li>
-        <a href="https://apolosites.com.br/">Eric Felicio</a>
+        <a href="#">Eric Felicio</a>
       </li>
     </ul>
   </div>

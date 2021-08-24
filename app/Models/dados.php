@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class dados extends Model
 {
     use HasFactory;
+    public $fillable = [
+        'name', 
+        'telefone', 
+        'email', 
+        'imagem', 
+    ];
 }

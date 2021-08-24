@@ -18,5 +18,5 @@ use App\Http\Controllers\EventController;
 
 /* informando valor da rota do controller espeficico, para index*/
 Route::get('/', [EventController::class, 'index']);
-Route::get('events', [EventController::class, 'store']);
-Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/create', [EventController::class, 'createForm']);
+Route::post('/events/create', [EventController::class, 'Form'])->name('form.store');
