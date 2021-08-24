@@ -27,10 +27,10 @@
                     <a href="/" class="navbar-brand"></a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="/paginas/emails" class="nav-link">Blog</a>
+                            <a href="/events/create" class="nav-link">Cadastrar</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/paginas/sites" class="nav-link">Sobre</a>
+                            <a href="/" class="nav-link">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a href="/login/login" class="nav-link">Empresa</a>

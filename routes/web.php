@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 /* Conectando o controller especifico */
-use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\EventController;
 
 /* informando valor da rota do controller espeficico, para index*/
-Route::get('/', [AgendaController::class, 'index']);
+Route::get('/', [EventController::class, 'index']);
+Route::get('events', [EventController::class, 'store']);
+Route::get('/events/create', [EventController::class, 'create']);

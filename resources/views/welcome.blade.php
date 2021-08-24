@@ -7,8 +7,9 @@
 
 @section('content')
 
-<h1> 12u34h1yui4h </h1>
-
+    @foreach($events as $event)
+    <p>{{ $event->nome }} {{ $event->telefone }} {{ $event->email }} {{ $event->imagem }}</p>
+    @endforeach
 @endsection
 
 
