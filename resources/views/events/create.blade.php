@@ -9,7 +9,7 @@
 
 <div id="event-create-container" class="col-md-6 offset-md-3">
     <h1>Registre o usuario</h1>
-    <form action="/events" method="POST">
+    <form action="/events" method="get">
     <div class="form-group">
         <label for="title">Usuario:</label>
         <input type="text" class="form-control" id="usuario" name="nome" placeholder="Nome do usuario">
