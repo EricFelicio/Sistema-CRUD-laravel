@@ -30,6 +30,11 @@ class EventController extends Controller
         $event->email = $request->email;
         $event->imagem = $request->imagem;
 
+        /* imagem upload form*/
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+            dd($request->image->store('img/events'));
+        }
+
         $event->save();
 
         return redirect('/');
