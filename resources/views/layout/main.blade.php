@@ -21,51 +21,44 @@
     </head>
 
     <body>
-        <head>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="collapse navbar-collapse" id="navbar">
-                    <a href="/" class="navbar-brand"></a>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="/events/create" class="nav-link">Cadastrar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Empresa</a>
-                        </li>
-                    </ul>
-                </div>
+    <header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="/">Usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/events/create">Criar Usuario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-            </nav>
-        </head>
-
+  <!-- Navbar -->
         @yield('content')
 
 <!-- conteudo do footer -->
-<footer>
-  <div class="footer_cop">
-    <ul class="part_footer">
-      <li>
-        <a href="contato">Contato</a>
-      </li>
-    </ul>
-    <ul class="part_footer">
-      <li>
-        <a href="blog">blog</a>
-      </li>
-    </ul>
-    <ul class="part_footer">
-      <li>
-        <a href="sobre">sobre</a>
-      </li>
-      <li>
-        <a href="#">Eric Felicio</a>
-      </li>
-    </ul>
-  </div>
-</footer>
 
 <!-- link dos icones -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

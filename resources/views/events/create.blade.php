@@ -7,7 +7,7 @@
 
 @section('content')
 
-<div id="event-create-container" class="col-md-6 offset-md-3">
+<div id="event-create-container center-block" class="col-md-6 offset-md-3">
     <h1>Registre o usuario</h1>
 
     <form action="/events" method="POST" enctype="multipart/form-data">
@@ -34,7 +34,7 @@
             <input type="string" class="form-control" name="email" id="email">
         </div>
 
-        <input type="submit" class="btn btn-primary" value="Criar Evento">
+        <input type="submit" class="btn btn-primary" value="Criar USuario">
 
     </form>
 

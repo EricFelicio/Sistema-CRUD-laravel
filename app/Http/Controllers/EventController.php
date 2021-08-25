@@ -16,7 +16,7 @@ class EventController extends Controller
         if($search) {
 
             $events = dados::where([
-                ['title', 'like', '%'.$search.'%']
+                ['nome', 'like', '%'.$search.'%']
             ])->get();
 
         } else {

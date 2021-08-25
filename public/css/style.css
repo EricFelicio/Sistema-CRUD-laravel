@@ -1,0 +1,152 @@
+/* global */
+body, head {
+    overflow-x: hidden !important;
+}
+/* /global */
+
+/* head */
+nav.navbar.navbar-expand-lg.navbar-light.bg-white {
+    background-color: #262E61 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+}
+/* /head */
+
+/* welcome */
+/* pesquisar */
+.col-md-12 form {
+    width: 50%;
+    margin: auto;
+}
+
+.col-md-12 h1 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+body {
+    background-color: #F5F5F5 !important;
+}
+
+/* usuarios */
+#events-container .card {
+    background-color: transparent !important;
+    margin-top: 40px;
+    padding: 10px;
+  }
+  
+
+  div#events-container {
+    display: flex !important;
+}
+
+.card.col-md-3 {
+    width: 300px;
+    border-left: none;
+    border-right: none;
+    width: 90%;
+    background-color: transparent;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.card {
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+div#events-container {
+    justify-content: center;
+}
+
+.card.col-md-6 {
+    box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset, rgb(0 0 0 / 30%) 0px 18px 36px -18px inset;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.form-welcome input.btn.btn-primary {
+    margin: 0px !important;
+}
+
+form.form-welcome {
+    display: flex;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #262E61 !important;
+    border-color: #262E61 !important;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #262E61 !important;
+    border-color: #262E61 !important;
+}
+
+.collapse:not(.show) {
+    display: flex !important;
+}
+/* /welcome */
+
+/* create */
+/* form create */
+div#event-create-container\ center-block h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: block;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+input#image {
+    margin-bottom: 10px;
+}
+
+input.btn.btn-primary {
+    margin-top: 30px;
+}
+
+.card-image img {
+    width: 100px;
+    height: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    div#event-create-container\ center-block form {
+      width: 80%;
+      margin: auto;
+      }
+    }
+
+@media only screen and (max-width: 450px) {
+    .form-group input#image {
+        font-size: 12px;
+        }
+    }
+    
+@media only screen and (max-width: 600px) {
+.col-md-12 form {
+    width: 85%;
+    margin: auto;
+    }
+}
+nav.navbar.navbar-expand-lg.navbar-light.bg-white {
+    background-color: #262E61 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+}
+
+/* /Create */
