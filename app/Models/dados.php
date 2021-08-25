@@ -12,6 +12,6 @@ class dados extends Model
         'name', 
         'telefone', 
         'email', 
-        'imagem', 
+        'image', 
     ];
 }

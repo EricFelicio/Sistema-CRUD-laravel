@@ -2,7 +2,7 @@
 
 @section(
     'title', 
-    'Criar Eventos'
+    'Cadastro'
     )
 
 @section('content')
@@ -10,35 +10,34 @@
 <div id="event-create-container" class="col-md-6 offset-md-3">
     <h1>Registre o usuario</h1>
 
-    <form action="" method="post" action="{{ route('form.store') }}">
+    <form action="/events" method="POST" enctype="multipart/form-data">
 
-<!-- CROSS  -->
-@csrf
-<div class="form-group">
-    <label>Nome</label>
-    <input type="string" class="form-control" name="nome" id="nome">
-</div>
+        <!-- CROSS  -->
+        @csrf
+        <div class="form-group">
+            <label for="image">Imagem do Usuario:</label>
+            <input type="file" id="image" name="image" class="from-control-file">
+        </div>
 
-<div class="form-group">
-    <label>Telefone</label>
-    <input type="string" class="form-control" name="telefone" id="telefone">
-</div>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="string" class="form-control" name="nome" id="nome">
+        </div>
 
-<div class="form-group">
-    <label>Email</label>
-    <input type="string" class="form-control" name="email" id="email">
-</div>
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="string" class="form-control" name="telefone" id="telefone">
+        </div>
 
-<div class="form-group">
-    <label>Imagem</label>
-    <input type="file" class="form-control" name="imagem" id="imagem">
-</div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="string" class="form-control" name="email" id="email">
+        </div>
 
-<input type="submit" name="send" value="Enviar" class="btn btn-dark btn-block">
-</form>
+        <input type="submit" class="btn btn-primary" value="Criar Evento">
+
+    </form>
 
 </div>
 
 @endsection
-
-

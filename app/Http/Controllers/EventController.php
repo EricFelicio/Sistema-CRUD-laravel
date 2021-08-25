@@ -11,41 +11,50 @@ class EventController extends Controller
 {
     public function index() {
 
-        $events = dados::all();
+        $search = request('search');
 
-        return View('welcome', ['events' => $events]);
+        if($search) {
+
+            $events = dados::where([
+                ['title', 'like', '%'.$search.'%']
+            ])->get();
+
+        } else {
+            $events = dados::all();
+        }     
+    
+        return view('welcome',['events' => $events, 'search' => $search]);
     }
 
-    public function createForm() {
-
-        return view('/events/create');    
+    public function create() {
+        return view('events.create');    
     }
 
-    public function Form(Request $request)
+    public function store(Request $request) {
 
-    {
 
         $event = new dados;
 
         $event->nome = $request->nome;
         $event->telefone = $request->telefone;
         $event->email = $request->email;
-        $event->imagem = $request->imagem;
+        $event->image = $request->image;
         
-        /* imagem upload form*/
-        if($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
-            
-            $requestImage = $request->imagem;
+        /* imagem upload form*/  
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
 
             $extension = $requestImage->extension();
 
-            $imageName = md5($requestImage->getClientOriginalName() . strtotime("new")) . "." . $extension;
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
 
             $requestImage->move(public_path('img/events'), $imageName);
 
             $event->image = $imageName;
+
         }
-    
+
         $event->save();
     
         return redirect('/');

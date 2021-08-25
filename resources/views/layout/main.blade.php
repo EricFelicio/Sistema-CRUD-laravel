@@ -33,7 +33,7 @@
                             <a href="/" class="nav-link">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/login/login" class="nav-link">Empresa</a>
+                            <a href="#" class="nav-link">Empresa</a>
                         </li>
                     </ul>
                 </div>
