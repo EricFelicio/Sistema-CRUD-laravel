@@ -19,11 +19,5 @@ use App\Http\Controllers\EventController;
 /* informando valor da rota do controller espeficico, para index*/
 Route::get('/', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create']);
-Route::get('/events/{id}', [EventController::class, 'show']);
-Route::post('/events', [EventController::class, 'store']);
-
-
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::post('/events', [EventController::class, 'show']);
+Route::delete('events/{id}', [EventController::class, 'delete']);

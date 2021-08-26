@@ -5,6 +5,13 @@ body, head {
 /* /global */
 
 /* head */
+
+.header-welcome p {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 50px;  
+}
+
 nav.navbar.navbar-expand-lg.navbar-light.bg-white {
     background-color: #262E61 !important;
 }

@@ -28,16 +28,28 @@
                 <div class="card-nome"><p>Nome: {{ $event->nome }}</p></div>
                 <div class="card-telefone"><p>Telefone: {{ $event->telefone }}</p></div>
                 <div class="card-email"><p>Email: {{ $event->email }}</p></div>
+
+            <form method="post" action="{{"events/". $event['id']}}">
+                @csrf
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger btn-icon">
+                    <i data-feather="delete">Deletar</i>
+                </button>
+            </form>
+
             </div>
             </div>
         @endforeach
         </div>
 
+        <div class="header-welcome">
     @if(count($events) == 0 && $search)
         <p>Não foi possível encontrar nenhum usuario com {{ $search }}! <a href="/">Ver todos</a></p>
     @elseif(count($events) == 0)
         <p>Não há usuarios cadastrados</p>
     @endif
+    </div>
+
 </div>
 
 @endsection

@@ -30,7 +30,15 @@ class EventController extends Controller
         return view('events.create');    
     }
 
-    public function store(Request $request) {
+    public function delete($id) {
+
+        $event = dados::find($id);
+        $event -> delete();
+
+        return redirect('/');
+    }
+
+    public function show(Request $request) {
 
 
         $event = new dados;
@@ -57,7 +65,7 @@ class EventController extends Controller
 
         $event->save();
     
-        return redirect('/');
+        return redirect('/');   
         
     }
 }
