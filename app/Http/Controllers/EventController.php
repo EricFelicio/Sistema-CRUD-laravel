@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\dados;
+use Illuminate\Queue\Jobs\RedisJob;
 
-/* function para retornar o view welcome blade como index */
+// function index 
 class EventController extends Controller
 {
     public function index() {
@@ -30,6 +31,7 @@ class EventController extends Controller
         return view('events.create');    
     }
 
+    // funcion delete 
     public function delete($id) {
 
         $event = dados::find($id);
@@ -38,6 +40,30 @@ class EventController extends Controller
         return redirect('/');
     }
 
+    // function edit 
+    public function edit($id) {
+        
+        $event = dados::findOrFail($id);
+
+        return view('events.edit', ['event' => $event]);
+
+    }
+
+    public function update(Request $request) {
+        
+        $event = dados::findOrFail($id);
+
+        $event->nome = $request->nome;
+        $event->telefone = $request->telefone;
+        $event->email = $request->email;
+        $event->image = $request->image;
+
+        $event->save();
+    
+        return redirect('/')->with('msg', 'Usuario alterado com sucesso.');
+
+    }
+    // function create users 
     public function show(Request $request) {
 
 
@@ -47,21 +73,6 @@ class EventController extends Controller
         $event->telefone = $request->telefone;
         $event->email = $request->email;
         $event->image = $request->image;
-        
-        /* imagem upload form*/  
-        if($request->hasFile('image') && $request->file('image')->isValid()) {
-
-            $requestImage = $request->image;
-
-            $extension = $requestImage->extension();
-
-            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
-
-            $requestImage->move(public_path('img/events'), $imageName);
-
-            $event->image = $imageName;
-
-        }
 
         $event->save();
     

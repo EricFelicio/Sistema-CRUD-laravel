@@ -20,4 +20,8 @@ use App\Http\Controllers\EventController;
 Route::get('/', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create']);
 Route::post('/events', [EventController::class, 'show']);
+
 Route::delete('events/{id}', [EventController::class, 'delete']);
+
+Route::get('events/edit/{id}', [EventController::class, 'edit']);
+Route::post('events/update/{id}', [EventController::class, 'update']);

@@ -22,6 +22,30 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-white {
 /* /head */
 
 /* welcome */
+
+/* botoes */
+.button-flex {
+    width: 100% !important;
+    bottom: 0px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.card-body form {
+    margin-right: 10px;
+}
+
+button.btn.btn-info.btn-icon {
+    color: white;
+}
+
+.header-search h2 {
+    font-size: 25px;
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+    font-family: arial;
+}
 /* pesquisar */
 .col-md-12 form {
     width: 50%;
