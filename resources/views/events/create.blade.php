@@ -34,7 +34,7 @@
             <input type="string" class="form-control" name="email" id="email">
         </div>
 
-        <input type="submit" class="btn btn-primary" value="Criar USuario">
+        <input type="submit" class="btn btn-primary" value="Criar Usuario">
 
     </form>
 

@@ -18,7 +18,7 @@ class CreateDadosTable extends Migration
             $table->string('nome', 100);
             $table->string('telefone');
             $table->string('email');
-            $table->string('image');
+            $table->string('image')->nullable(true);
             $table->timestamps();
         });
     }

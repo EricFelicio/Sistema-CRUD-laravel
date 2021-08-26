@@ -35,7 +35,7 @@
             </div>
             <div class="button-flex">
 
-                <form method="post" action={{ "delete/". $event['id'] }}>
+                <form method="post" action="{{"events/delete". $event['id'] }}">
                     @csrf
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="btn btn-danger btn-icon">
@@ -43,8 +43,9 @@
                     </button>
                 </form>
 
-                <a type="submit" class="btn btn-info btn-icon" href="/events/edit/{{ $event->id }}">Editar</a>
-
+                <div class="buttom-edit">
+                    <a type="submit" class="btn btn-info btn-icon" href="/events/edit/{{ $event->id }}">Editar</a>
+                </div>
             </div>
 
         </div>

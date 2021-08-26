@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\dados;
 use Illuminate\Queue\Jobs\RedisJob;
 
+
+
+
 // function index 
 class EventController extends Controller
 {
@@ -23,13 +26,15 @@ class EventController extends Controller
         } else {
             $events = dados::all();
         }     
-    
+
         return view('welcome',['events' => $events, 'search' => $search]);
     }
 
     public function create() {
         return view('events.create');    
     }
+
+
 
     // funcion delete 
     public function delete($id) {
@@ -40,32 +45,53 @@ class EventController extends Controller
         return redirect('/');
     }
 
+
+
     // function edit 
     public function edit($id) {
         
-        $event = dados::findOrFail($id);
-
-        return view('events.edit', ['event' => $event]);
+        $event = dados::find($id);
+        return view('events/edit', ['event'=> $event]);
 
     }
 
-    public function update(Request $request) {
-        
-        $event = dados::findOrFail($id);
 
-        $event->nome = $request->nome;
-        $event->telefone = $request->telefone;
-        $event->email = $request->email;
-        $event->image = $request->image;
+
+    //function update
+    public function update(Request $req) {
+
+        $event=dados::find($req->id);
+        $event->image = $req->image;
+        $event->nome = $req->nome;
+        $event->telefone = $req->telefone;
+        $event->email = $req->email;
+        
+        /* imagem upload form*/  
+        if($req->hasFile('image') && $req->file('image')->isValid()) {
+
+            $requestImage = $req->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+
+            $event->image = $imageName;
+
+        }
 
         $event->save();
-    
-        return redirect('/')->with('msg', 'Usuario alterado com sucesso.');
+
+        return redirect('/');
 
     }
+
+
+
+
     // function create users 
     public function show(Request $request) {
-
 
         $event = new dados;
 
@@ -74,9 +100,24 @@ class EventController extends Controller
         $event->email = $request->email;
         $event->image = $request->image;
 
+        /* imagem upload form*/  
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+
+            $event->image = $imageName;
+
+        }
+
         $event->save();
-    
-        return redirect('/');   
+
+        return redirect('/');
         
     }
 }
